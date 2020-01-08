@@ -1,32 +1,50 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+<template lang="pug">
+div#app
+  NavBar
+  router-view(:key="$route.fullPath")
+  Footer
 </template>
 
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
 
-#nav {
-  padding: 30px;
-}
+export default {
+  components: {
+    NavBar,
+    Footer
+  }
+};
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<style lang="sass">
+#app
+  width: 100%
+  height: 80%
+  background-color: #000000e3
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+.select-input
+  width: 220px
+
+h1
+  color: #BAE5FE
+
+.base-input
+   background-color: #495057 !important
+   color: #dbdbdb !important
+   border-inline-start: 0px !important
+   border-block-end: 1px solid black !important
+   border-block-start: 0px !important
+   border-inline-end: 0px !important
+   width: 100%
+   font-size: 15px
+
+.error-message
+  color: red
+
+.button_margin-top
+  margin-top: 20px
+
+.top-margin
+  margin-top: 40px
 </style>
