@@ -7,7 +7,7 @@
         .create-plan-page__line
         .columns.is-multiline
           .column.is-6(v-for="question in questions" :key="question.id")
-            input.base-input(:placeholder="question.inquiry")
+            input.base-input(:placeholder="question.inquiry" v-model="question.value")
         .columns
           .column.create-plan-page__button
             button.button.is-black Submit

@@ -12,8 +12,12 @@
     // Menu
     .column
       .header__items
-        .header__item(v-for="navItem in navItems")
-          router-link.header__item-link(:to="navItem.path") {{ navItem.title }} 
+        .header__item
+          router-link.header__item-link(:to="{ name: 'plan-create' }") Create plan 
+        .header__item
+          router-link.header__item-link(:to="{ name: 'plan-edit' }") Edit existing plans 
+        .header__item
+          router-link.header__item-link(:to="{ name: 'plan-list' }") Show all my plans 
 
       //- .dropdown.is-right(:class="{'is-active': navbarMenu}")
       //-   .dropdown-menu(id="dropdown-menu" role="menu")
@@ -27,24 +31,24 @@
 export default {
   data() {
     return {
-      navItems: [
-        {
-          title: "Create plan",
-          path: "/"
-        },
-        {
-          title: "Edit plan",
-          path: "plan-edit"
-        },
-        {
-          title: "Plan list",
-          path: "plan-list"
-        }
-      ],
+      // navItems: [
+      //   {
+      //     title: "Create plan",
+      //     path: "/"
+      //   },
+      //   {
+      //     title: "Edit plan",
+      //     path: "plan-edit"
+      //   },
+      //   {
+      //     title: "Plan list",
+      //     path: "plan-list"
+      //   }
+      // ],
       navbarMenu: false
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="sass">
