@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import PlanCreate from "../views/PlanCreate.vue";
 import PlanEdit from "../views/PlanEdit.vue";
 import PlanList from "../views/PlanList.vue";
+import PlanShow from "../views/PlanShow.vue";
 
 Vue.use(VueRouter);
 
@@ -13,23 +14,21 @@ const routes = [
     component: PlanCreate
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
-  },
-  {
-    path: "/plan-edit",
+    path: "/plan-edit/:id",
     name: "plan-edit",
-    component: PlanEdit
+    component: PlanEdit,
+    props: true
   },
   {
     path: "/plan-list",
     name: "plan-list",
     component: PlanList
+  },
+  {
+    path: "/plan-show/:id",
+    name: "plan-show",
+    component: PlanShow,
+    props: true
   }
 ];
 

@@ -7,7 +7,7 @@
         .create-plan-page__line
         .columns.is-multiline
           .column.is-6(v-for="question in questions" :key="question.id")
-            input.base-input(:placeholder="question.inquiry" v-model="question.value")
+            input.base-input(:placeholder="question.title")
         .columns
           .column.create-plan-page__button
             button.button.is-black Submit
@@ -18,30 +18,23 @@
 </template>
 
 <script>
+import ClientService from "@/services/ClientService.js";
+
 export default {
   data() {
     return {
-      questions: [
-        { id: 1, inquiry: "From", value: "" },
-        { is: 2, inquiry: "To", value: "" },
-        { id: 3, inquiry: "Seats", value: "" },
-        { id: 4, inquiry: "Which way", value: "" },
-        { id: 5, inquiry: "When to go", value: "" },
-        { is: 6, inquiry: "Return date", value: "" },
-        { is: 7, inquiry: "Expenses", value: "" },
-        { is: 8, inquiry: "Roadbook", value: "" },
-        { id: 9, inquiry: "Arrival time", value: "" },
-        { is: 10, inquiry: "Return time", value: "" },
-        { is: 11, inquiry: "Max transfers", value: "" },
-        { is: 12, inquiry: "Max flight time", value: "" }
-      ]
+      questions: []
     };
+  },
+  created() {
+    ClientService.getQuestions()
+      .then(response => {
+        this.questions = response.data;
+      })
+      .catch(error => {
+        console.log("There was an error: " + error.response);
+      });
   }
-  // computed: {
-  //   questions() {
-  //     return this.$store.getters["questions/questions"];
-  //   }
-  // }
 };
 </script>
 
