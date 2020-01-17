@@ -10,7 +10,7 @@
           td.plan-edit__answers {{ answer.question.id}}.
           td.plan-edit__answers {{ answer.question.title }} 
           td
-             input.input.is-small(:placeholder="answer.value || 'There is nothing here yet'")
+             input.input.is-small(:placeholder="answer.value || 'There is nothing here yet'" v-model="answer.value")
       button.button.btn-plan Submit
 </template>
 
