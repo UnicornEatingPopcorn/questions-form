@@ -18,5 +18,8 @@ export default {
   },
   getPlan(id) {
     return apiClient.get("/plans/" + id);
+  },
+  getAirports() {
+    return apiClient.get("/airports");
   }
 };

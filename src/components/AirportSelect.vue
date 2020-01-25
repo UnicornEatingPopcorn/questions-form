@@ -1,0 +1,76 @@
+<template lang="pug">
+.column.is-paddingless.airport-select-component
+  .airports-dropdown
+    input.base-input(type="text" v-model="value" :placeholder="label")
+    //- .dropdown-items
+    //-   .dropdown-item(v-for="airport in airports" :key="airport.icao" @click="setAirport(airport)") {{ airport.name }}
+    //-     span.badge.badge-primary {{ airport.city }} {{ airport.country }}
+    //-     .sm-line
+</template>
+
+<script>
+import ClientService from "@/services/ClientService.js";
+
+export default {
+  props: {
+    label: {
+      type: String,
+      default: ""
+    },
+    value: {
+      type: [Number, String]
+    }
+  },
+  data() {
+    return {
+      airports: []
+    };
+  },
+  created() {
+    ClientService.getAirports()
+      .then(response => {
+        this.airports = response.data;
+      })
+      .catch(error => {
+        console.log("There was an error:", error.response);
+      });
+  },
+  methods: {
+    setAirport(airport) {
+      this.value = airport.id;
+      this.query = airport.city;
+    }
+  }
+};
+</script>
+
+<style lang="sass">
+.select-input
+  width: 220px
+
+.airports-dropdown
+  position: relative
+
+.dropdown-items
+  position: absolute
+  top: 38px
+  left: 0px
+  z-index: 99
+  background: white
+  width: 100%
+
+.dropdown-item
+  cursor: pointer
+
+.badge-primary
+  margin-left: 10px
+
+.sm-line
+  height: 1px
+  background: #b8daff8c
+  width: 100%
+  margin-top: 5px
+
+.airport-select-component
+  margin-top: 10px
+</style>

@@ -2,16 +2,17 @@
 .purple-content
   .columns.justify-content-center
     .column.is-6.is-offset-2
-      h1.top-margin Plan № {{ plan.id }}
+      h1.top-margin Plan № {{ id }}
       form.question-plan
         h3 Answers:        
-        h5(v-for="answer in plan.answers" :key="answer.id") {{ answer.question.id}}. {{ answer.question.title }} : {{ answer.value }}
+        h5(v-for="answer in plan.answers" :key="answer.id") {{ answer.question.id}}. {{ answer.question.title }} : {{ answer.value || "empty" }}
       .columns.button_margin-top
         .column
           router-link.button.is-warning(:to="{ name: 'plan-edit', params: { id: plan.id } }") Edit
         .column
+          button.button.is-info.btn__text-white Submit
+        .column
           button.button.is-danger.btn__text-white Delete
-
 </template>
 
 <script>

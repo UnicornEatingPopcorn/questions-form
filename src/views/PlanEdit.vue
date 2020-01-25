@@ -57,7 +57,7 @@ export default {
 
 .btn-plan
   background-color: #2aabf7 !important
-  margin-top: 20px
+  margin: 20px 0px
   width: 220px
 
 .form-text

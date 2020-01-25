@@ -6,8 +6,10 @@
         p.create-plan-page__title Let's start with few simple questions
         .create-plan-page__line
         .columns.is-multiline
-          .column.is-6(v-for="question in questions" :key="question.id")
-            input.base-input(:placeholder="question.title")
+           Answer(
+             v-for="answer in plan.answers"
+             :key="answer.question.id"
+             :answer="answer")
         .columns
           .column.create-plan-page__button
             button.button.is-black Submit
@@ -15,25 +17,45 @@
       .create-plan-page__question-plan
         p.create-plan-page__title Additional questions
         .create-plan-page__line
+        p There is no additional questions yet. Please answer the main questions to figure out if we need more information for create your dream trip.
 </template>
 
 <script>
 import ClientService from "@/services/ClientService.js";
+import Answer from "@/components/Answer.vue";
 
 export default {
+  components: {
+    Answer
+  },
   data() {
     return {
-      questions: []
+      plan: this.createNewPlan()
     };
   },
   created() {
     ClientService.getQuestions()
       .then(response => {
-        this.questions = response.data;
+        const questions = response.data;
+        this.plan.answers = questions.map(question => {
+          const id = Math.floor(Math.random() * 10000000);
+
+          return { question, value: "", id };
+        });
       })
       .catch(error => {
-        console.log("There was an error: " + error.response);
+        console.log("There was an error:", error.response);
       });
+  },
+  methods: {
+    createNewPlan() {
+      const id = Math.floor(Math.random() * 10000000);
+
+      return {
+        id: id,
+        answers: []
+      };
+    }
   }
 };
 </script>
