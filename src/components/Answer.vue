@@ -8,15 +8,9 @@
 </template>
 
 <script>
-import AirportSelect from "@/components/AirportSelect.vue"
-import SeatsSelect from "@/components/SeatsSelect.vue"
-import DirectionsSelect from "@/components/DirectionsSelect.vue"
-import ExpensesSelect from "@/components/ExpensesSelect.vue"
-import RoadBookSelect from "@/components/RoadBookSelect.vue"
-import ArrivalTimeSelect from "@/components/ArrivalTimeSelect.vue"
-import ReturnTimeSelect from "@/components/ReturnTimeSelect.vue"
-import MaxTransfersSelect from "@/components/MaxTransfersSelect.vue"
-import MaxFlightTimeSelect from "@/components/MaxFlightTimeSelect.vue"
+import AirportSelect from "@/components/AirportSelect.vue";
+import BaseCalendar from "@/components/BaseCalendar.vue";
+import BaseSelect from "@/components/BaseSelect.vue";
 
 export default {
   props: {
@@ -24,21 +18,15 @@ export default {
   },
   computed: {
     question() {
-      return this.answer.question
+      return this.answer.question;
     }
   },
   components: {
     AirportSelect,
-    SeatsSelect,
-    DirectionsSelect,
-    ExpensesSelect,
-    RoadBookSelect,
-    ArrivalTimeSelect,
-    ReturnTimeSelect,
-    MaxTransfersSelect,
-    MaxFlightTimeSelect
+    BaseCalendar,
+    BaseSelect
   }
-}
+};
 </script>
 
 <style lang="sass">
