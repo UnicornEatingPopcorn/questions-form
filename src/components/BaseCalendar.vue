@@ -1,6 +1,6 @@
 <template lang="pug">
 .column.is-paddingless
-  input.base-input(type="text" v-model="value" :placeholder="label")
+  input.base-input(type="date" v-model="value" :placeholder="label")
 </template>
 
 <script>

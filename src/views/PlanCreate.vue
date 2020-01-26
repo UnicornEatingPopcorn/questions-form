@@ -2,7 +2,7 @@
 .create-plan-page
   .columns
     .column.is-5.is-offset-1
-      form#mainQuestions.create-plan-page__question-plan
+      form#mainQuestions.create-plan-page__question-plan(@submit.prevent="createPlan")
         p.create-plan-page__title Let's start with few simple questions
         .create-plan-page__line
         .columns.is-multiline
@@ -55,6 +55,9 @@ export default {
         id: id,
         answers: []
       };
+    },
+    createPlan() {
+      this.$store.dispatch("createPlan", this.plan);
     }
   }
 };
