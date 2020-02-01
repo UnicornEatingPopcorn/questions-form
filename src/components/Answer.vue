@@ -4,7 +4,7 @@
     :is="question.component"
     :label="question.title"
     :options="question.select_options"
-    @updateBaseSelectPropValue="updateSelectValueFromChild"
+    @updatePropValue="updateValueFromChild"
     )
 </template>
 
@@ -28,7 +28,7 @@ export default {
     BaseSelect
   },
   methods: {
-    updateSelectValueFromChild(event) {
+    updateValueFromChild(event) {
       return (this.answer.value = event);
     }
   }

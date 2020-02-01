@@ -2,7 +2,7 @@
 .column.is-paddingless.airport-select
   .airports-dropdown
     label.airport-select__label {{ label }}
-    input.base-input.airport-select__placeholder(type="text" v-model="value" placeholder="Find the city")
+    input.base-input.airport-select__placeholder(type="text" placeholder="Find the city" @change="updateValue")
     //- .dropdown-items
     //-   .dropdown-item(v-for="airport in airports" :key="airport.icao" @click="setAirport(airport)") {{ airport.name }}
     //-     span.badge.badge-primary {{ airport.city }} {{ airport.country }}
@@ -44,6 +44,9 @@ export default {
     setAirport(airport) {
       this.value = airport.id;
       this.query = airport.city;
+    },
+    updateValue(event) {
+      this.$emit("updatePropValue", event.target.value);
     }
   }
 };

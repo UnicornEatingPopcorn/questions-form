@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     updateValue(event) {
-      this.$emit("updateBaseSelectPropValue", event.target.value);
+      this.$emit("updatePropValue", event.target.value);
     }
   }
 };
