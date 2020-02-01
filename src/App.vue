@@ -23,21 +23,8 @@ export default {
   height: 80%
   background-color: #000000e3
 
-.select-input
-  width: 220px
-
 h1
   color: #BAE5FE
-
-.base-input
-   background-color: #495057 !important
-   color: #dbdbdb !important
-   border-inline-start: 0px !important
-   border-block-end: 1px solid black !important
-   border-block-start: 0px !important
-   border-inline-end: 0px !important
-   width: 100%
-   font-size: 15px
 
 .error-message
   color: red

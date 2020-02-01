@@ -94,14 +94,4 @@ export default {
 .button:hover
   transform: scale(1.03)
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.19)
-
-.base-input
-   background-color: #495057 !important
-   color: #dbdbdb !important
-   border-inline-start: 0px !important
-   border-block-end: 1px solid black !important
-   border-block-start: 0px !important
-   border-inline-end: 0px !important
-   width: 100%
-   font-size: 15px
 </style>

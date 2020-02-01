@@ -1,6 +1,7 @@
 <template lang="pug">
 .column.is-paddingless
-  input.base-input(type="date" v-model="value" :placeholder="label")
+  label.base-calendar__label {{ label }}
+  input.base-input(type="date" v-model="value")
 </template>
 
 <script>
@@ -17,4 +18,7 @@ export default {
 };
 </script>
 
-<style lang="sass"></style>
+<style lang="sass">
+.base-calendar__label
+  color: white
+</style>

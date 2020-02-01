@@ -1,7 +1,8 @@
 <template lang="pug">
-.column.is-paddingless.airport-select-component
+.column.is-paddingless.airport-select
   .airports-dropdown
-    input.base-input(type="text" v-model="value" :placeholder="label")
+    label.airport-select__label {{ label }}
+    input.base-input.airport-select__placeholder(type="text" v-model="value" placeholder="Find the city")
     //- .dropdown-items
     //-   .dropdown-item(v-for="airport in airports" :key="airport.icao" @click="setAirport(airport)") {{ airport.name }}
     //-     span.badge.badge-primary {{ airport.city }} {{ airport.country }}
@@ -19,6 +20,10 @@ export default {
     },
     value: {
       type: [Number, String]
+    },
+    placeholder: {
+      type: String,
+      default: ""
     }
   },
   data() {
@@ -71,6 +76,12 @@ export default {
   width: 100%
   margin-top: 5px
 
-.airport-select-component
+.airport-select
   margin-top: 10px
+
+  &__label
+    color: white
+
+  &__placeholder::placeholder
+    color: #f7b944
 </style>
