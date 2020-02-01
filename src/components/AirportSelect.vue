@@ -81,6 +81,7 @@ export default {
 
   &__label
     color: white
+    font-size: 14px
 
   &__placeholder::placeholder
     color: #f7b944

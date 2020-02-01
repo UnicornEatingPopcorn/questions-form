@@ -4,7 +4,8 @@
     :is="question.component"
     :label="question.title"
     :options="question.select_options"
-    v-model="answer.value")
+    @updateBaseSelectPropValue="updateSelectValueFromChild"
+    )
 </template>
 
 <script>
@@ -25,6 +26,11 @@ export default {
     AirportSelect,
     BaseCalendar,
     BaseSelect
+  },
+  methods: {
+    updateSelectValueFromChild(event) {
+      return (this.answer.value = event);
+    }
   }
 };
 </script>

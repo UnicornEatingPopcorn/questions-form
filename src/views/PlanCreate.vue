@@ -57,7 +57,18 @@ export default {
       };
     },
     createPlan() {
-      this.$store.dispatch("createPlan", this.plan);
+      this.$store
+        .dispatch("createPlan", this.plan)
+        .then(() => {
+          this.$router.push({
+            name: "plan-show",
+            params: { id: this.plan.id }
+          });
+          this.event = this.createNewPlan();
+        })
+        .catch(() => {
+          console.log("There was a problem creating your event");
+        });
     }
   }
 };

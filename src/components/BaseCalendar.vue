@@ -21,4 +21,5 @@ export default {
 <style lang="sass">
 .base-calendar__label
   color: white
+  font-size: 14px
 </style>

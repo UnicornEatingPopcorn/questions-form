@@ -1,17 +1,16 @@
 <template lang="pug">
 .column.is-paddingless
   label.base-select__label {{ label}}
-  select.base-input(@change="updateValue" v-bind="$attrs")
+  select.base-input(@change="updateValue")
     option(
       v-for="option in options"
-      :key="option.value"
+      :key="option.id"
       :value="option.name"
       :selected="option.name === null") {{ option.name }}
 </template>
 
 <script>
 export default {
-  inheritAttrs: false,
   props: {
     label: {
       type: String,
@@ -27,7 +26,7 @@ export default {
   },
   methods: {
     updateValue(event) {
-      this.value = event.target.value;
+      this.$emit("updateBaseSelectPropValue", event.target.value);
     }
   }
 };
@@ -39,6 +38,7 @@ export default {
 
 .base-select__label
   color: white
+  font-size: 14px
 
 .base-input
    background-color: #495057 !important
