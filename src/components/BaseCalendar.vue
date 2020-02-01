@@ -1,7 +1,7 @@
 <template lang="pug">
 .column.is-paddingless
   label.base-calendar__label {{ label }}
-  input.base-input(type="date" v-model="value")
+  input.base-input(type="date" @change="updateValue")
 </template>
 
 <script>
@@ -13,6 +13,11 @@ export default {
     },
     value: {
       type: [Number, String]
+    }
+  },
+  methods: {
+    updateValue(event) {
+      this.$emit("updatePropValue", event.target.value)
     }
   }
 };
