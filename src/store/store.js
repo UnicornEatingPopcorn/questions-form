@@ -10,13 +10,21 @@ export default new Vuex.Store({
   },
   mutations: {
     ADD_PLAN(state, plan) {
-      return state.plans.push(plan);
+      state.plans.push(plan);
+    },
+    DELETE_PLAN(state, planId) {
+      state.plans = state.plans.filter(plan => planId !== plan.id);
     }
   },
   actions: {
     createPlan({ commit }, plan) {
       ClientService.postPlan(plan);
       commit("ADD_PLAN", plan);
+    },
+    deletePlan({ commit }, id) {
+      ClientService.deletePlan(id).then(() => {
+        commit("DELETE_PLAN", id);
+      });
     }
   }
 });

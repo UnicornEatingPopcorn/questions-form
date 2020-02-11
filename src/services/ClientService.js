@@ -24,5 +24,8 @@ export default {
   },
   postPlan(plan) {
     return apiClient.post("/plans", plan);
+  },
+  deletePlan(id) {
+    return apiClient.delete("/plans/" + id);
   }
 };

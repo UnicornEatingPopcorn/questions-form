@@ -12,7 +12,7 @@
         .column
           button.button.is-info.btn__text-white Submit
         .column
-          button.button.is-danger.btn__text-white Delete
+          button.button.is-danger.btn__text-white(@click="deletePlan") Delete
 </template>
 
 <script>
@@ -33,6 +33,15 @@ export default {
       .catch(error => {
         console.log("There was an error:", error.response);
       });
+  },
+  methods: {
+    deletePlan() {
+      this.$store.dispatch("deletePlan", this.id).then(() => {
+        this.$router.push({
+          name: "plan-list"
+        });
+      });
+    }
   }
 };
 </script>
