@@ -1,5 +1,5 @@
 <template lang="pug">
-.purple-content
+.plan-show
   .columns.justify-content-center
     .column.is-6.is-offset-2
       h1.top-margin Plan № {{ id }}
@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style lang="sass">
+.plan-show
+  min-height: 83vh
+
 .btn__text-white
   color: white !important
 

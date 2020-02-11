@@ -1,5 +1,5 @@
 <template lang="pug">
-.purple-content.top-padding
+.plan-list
   .columns
     .column.is-half.is-offset-one-quarter
       h1 Plan List
@@ -32,9 +32,10 @@ export default {
 </script>
 
 <style lang="sass">
-.top-padding
+.plan-list
   padding-top: 70px
+  min-height: 83vh
 
-.plan-list__link
-  color: #004085
+  &__link
+    color: #004085
 </style>

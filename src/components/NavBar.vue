@@ -37,7 +37,6 @@ export default {
 
 <style lang="sass">
 .header
-  height: 50px
 
   &__title
     color: #f7b944

@@ -19,8 +19,6 @@ export default {
 
 <style lang="sass">
 #app
-  width: 100%
-  height: 80%
   background-color: #000000e3
 
 h1
