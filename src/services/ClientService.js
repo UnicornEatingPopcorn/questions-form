@@ -27,5 +27,8 @@ export default {
   },
   deletePlan(id) {
     return apiClient.delete("/plans/" + id);
+  },
+  editPlan(plan) {
+    return apiClient.patch("/plans/" + plan.id, plan);
   }
 };

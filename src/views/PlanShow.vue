@@ -10,8 +10,6 @@
         .column
           router-link.button.is-warning(:to="{ name: 'plan-edit', params: { id: plan.id } }") Edit
         .column
-          button.button.is-info.btn__text-white Submit
-        .column
           button.button.is-danger.btn__text-white(@click="deletePlan") Delete
 </template>
 

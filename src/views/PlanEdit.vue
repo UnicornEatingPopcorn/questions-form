@@ -11,7 +11,7 @@
           td.plan-edit__answers {{ answer.question.title }} 
           td
              input.input.is-small(:placeholder="answer.value || 'There is nothing here yet'" v-model="answer.value")
-      button.button.btn-plan Submit
+      button.button.btn-plan(@click="editPlan") Submit
 </template>
 
 <script>
@@ -32,6 +32,20 @@ export default {
       .catch(error => {
         console.log("There was an error:", error.response);
       });
+  },
+  methods: {
+    editPlan() {
+      this.$store
+        .dispatch("editPlan", this.plan)
+        .then(() => {
+          this.$router.push({
+            name: "plan-list"
+          });
+        })
+        .catch(() => {
+          console.log("There was a problem editing your plan");
+        });
+    }
   }
 };
 </script>

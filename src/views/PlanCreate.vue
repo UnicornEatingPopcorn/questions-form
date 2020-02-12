@@ -64,10 +64,9 @@ export default {
             name: "plan-show",
             params: { id: this.plan.id }
           });
-          this.event = this.createNewPlan();
         })
         .catch(() => {
-          console.log("There was a problem creating your event");
+          console.log("There was a problem creating your plan");
         });
     }
   }

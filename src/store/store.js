@@ -14,6 +14,14 @@ export default new Vuex.Store({
     },
     DELETE_PLAN(state, planId) {
       state.plans = state.plans.filter(plan => planId !== plan.id);
+    },
+    EDIT_PLAN(state, EditedPlan) {
+      state.plans = state.plans.map(plan => {
+        if (EditedPlan.id == plan.id) {
+          return EditedPlan;
+        }
+        return plan;
+      });
     }
   },
   actions: {
@@ -24,6 +32,11 @@ export default new Vuex.Store({
     deletePlan({ commit }, id) {
       ClientService.deletePlan(id).then(() => {
         commit("DELETE_PLAN", id);
+      });
+    },
+    editPlan({ commit }, plan) {
+      ClientService.editPlan(plan).then(response => {
+        commit("EDIT_PLAN", response.data);
       });
     }
   }
