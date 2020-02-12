@@ -2,15 +2,19 @@
 .plan-show
   .columns.justify-content-center
     .column.is-6.is-offset-2
-      h1.top-margin Plan № {{ id }}
-      form.question-plan
-        h3 Answers:        
-        h5(v-for="answer in plan.answers" :key="answer.id") {{ answer.question.id}}. {{ answer.question.title }} : {{ answer.value || "empty" }}
-      .columns.button_margin-top
+      p.plan-show__id Plan № {{ id }}
+      form
+        p.plan-show__title Answers:        
+        table.table.plan-show__table
+          tr(v-for="answer in plan.answers" :key="answer.id")
+            td.plan-show__answers {{ answer.question.id }}.
+            td.plan-show__answers {{ answer.question.title }} 
+            td.plan-show__answers {{ answer.value || "empty"}}
+      .columns.plan-show__buttons
         .column
           router-link.button.is-warning(:to="{ name: 'plan-edit', params: { id: plan.id } }") Edit
         .column
-          button.button.is-danger.btn__text-white(@click="deletePlan") Delete
+          button.button.plan-show__delete-button(@click="deletePlan") Delete
 </template>
 
 <script>
@@ -48,9 +52,31 @@ export default {
 .plan-show
   min-height: 83vh
 
-.btn__text-white
-  color: white !important
+  &__title
+    color: white
+    font-size: 20px
+    margin-bottom: 20px
 
-.question-plan
-  color: white
+  &__answers
+    font-size: 18px
+    margin-bottom: 10px
+    color: beige
+
+  &__id
+    margin-top: 40px
+    font-size: 23px
+    margin-bottom: 20px
+    color: #BAE5FE
+
+  &__table
+    width: 500px
+
+  &__buttons
+    margin-top: 20px !important
+
+  &__delete-button
+    color: white !important
+    background-color: #a90123 !important
+    border-color: none !important
+    border: none !important
 </style>

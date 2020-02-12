@@ -2,16 +2,16 @@
 .container
   .columns
     .column.is-offset-2
-      h1.title.top-margin Edit Plan № {{ plan.id}} 
-      form#mainQuestions.position-relative.question-plan(@submit.prevent="updatePlan")
-      h1.subtitle Check your answers, please
-      table.table.plan-edit__table
-        tr(v-for="answer in plan.answers" :key="answer.id")
-          td.plan-edit__answers {{ answer.question.id}}.
-          td.plan-edit__answers {{ answer.question.title }} 
-          td
-             input.input.is-small(:placeholder="answer.value || 'There is nothing here yet'" v-model="answer.value")
-      button.button.btn-plan(@click="editPlan") Submit
+      p.plan-edit__id Edit Plan № {{ plan.id}} 
+      form(@submit.prevent="editPlan")
+        p.plan-edit__title Check your answers, please
+        table.table.plan-edit__table
+          tr(v-for="answer in plan.answers" :key="answer.id")
+            td.plan-edit__answers {{ answer.question.id}}.
+            td.plan-edit__answers {{ answer.question.title }} 
+            td
+               input.input.is-small(:placeholder="answer.value || 'There is nothing here yet'" v-model="answer.value")
+        button.button.btn-plan Submit
 </template>
 
 <script>
@@ -52,8 +52,21 @@ export default {
 
 <style lang="sass">
 .plan-edit
+
+  &__id
+    color: #BAE5FE
+    font-size: 23px
+    margin-top: 40px
+    margin-bottom: 20px
+
+  &__title
+    color: white
+    font-size: 20px
+    margin-bottom: 20px
+
   &__answers
     color: beige
+    font-size: 18px
 
   &__table
     width: 500px

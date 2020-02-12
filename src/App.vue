@@ -21,15 +21,6 @@ export default {
 #app
   background-color: #000000e3
 
-h1
-  color: #BAE5FE
-
 .error-message
   color: red
-
-.button_margin-top
-  margin-top: 20px
-
-.top-margin
-  margin-top: 40px
 </style>

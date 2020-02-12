@@ -40,7 +40,7 @@ export default {
 
   &__title
     color: #f7b944
-    font-size: 18px
+    font-size: 20px
     margin-bottom: 0px
 
   &__items
@@ -52,7 +52,7 @@ export default {
 
   &__item-link
     color: white
-    font-size: 16px
+    font-size: 18px
     &.router-link-exact-active
       color: #f7b944
 

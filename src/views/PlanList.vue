@@ -2,7 +2,7 @@
 .plan-list
   .columns
     .column.is-half.is-offset-one-quarter
-      h1 Plan List
+      p.plan-list__title Plan List
       PlanCard(v-for="plan in plans" :key="plan.id" :plan="plan")
 </template>
 
@@ -33,8 +33,13 @@ export default {
 
 <style lang="sass">
 .plan-list
-  padding-top: 70px
+  padding-top: 40px
   min-height: 83vh
+
+  &__title
+    color: #BAE5FE
+    font-size: 23px
+    margin-bottom: 20px
 
   &__link
     color: #004085
