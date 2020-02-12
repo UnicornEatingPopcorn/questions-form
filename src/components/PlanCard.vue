@@ -1,7 +1,7 @@
 <template lang="pug">
-router-link(class="plan-link" :to="{ name: 'plan-show', params: { id: plan.id } }")
-  div(class="plan-card")
-    h4(class="title") Plan № {{ plan.id }}
+router-link.plan-link(:to="{ name: 'plan-show', params: { id: plan.id } }")
+  .plan-card
+    h4.title Plan № {{ plan.id }}
 </template>
 
 <script>
@@ -14,12 +14,12 @@ export default {
 
 <style lang="sass">
 .plan-card
-  background-color: #82CFFD
+  background-color: #f7b944
   padding: 20px
   margin-bottom: 24px
   transition: all 0.2s linear
   cursor: pointer
-  border: solid 4px #C0C5FE
+  border: solid 4px rgba(54, 54, 54, 0.25)
 
 .plan-card:hover
   transform: scale(1.1)

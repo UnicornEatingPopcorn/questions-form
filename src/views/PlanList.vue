@@ -37,7 +37,7 @@ export default {
   min-height: 83vh
 
   &__title
-    color: #BAE5FE
+    color: white
     font-size: 23px
     margin-bottom: 20px
 
