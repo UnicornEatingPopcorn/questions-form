@@ -1,7 +1,7 @@
 <template lang="pug">
 .plan-show
-  .columns.justify-content-center
-    .column.is-6.is-offset-2
+  .columns
+    .column.is-6.is-offset-3
       p.plan-show__id Plan № {{ id }}
       form
         p.plan-show__title Answers:        
@@ -10,11 +10,9 @@
             td.plan-show__answers {{ answer.question.id }}.
             td.plan-show__answers {{ answer.question.title }} 
             td.plan-show__answers {{ answer.value || "empty"}}
-      .columns.plan-show__buttons
-        .column
-          router-link.button.is-warning(:to="{ name: 'plan-edit', params: { id: plan.id } }") Edit
-        .column
-          button.button.plan-show__delete-button(@click="deletePlan") Delete
+      .plan-show__buttons
+        router-link.button.is-warning(:to="{ name: 'plan-edit', params: { id: plan.id } }") Edit
+        button.button.plan-show__delete-button.is-danger(@click="deletePlan") Delete
 </template>
 
 <script>
@@ -69,14 +67,13 @@ export default {
     color: #BAE5FE
 
   &__table
-    width: 500px
+    width: 100%
 
   &__buttons
     margin-top: 20px !important
+    display: flex
+    justify-content: flex-end
 
   &__delete-button
-    color: white !important
-    background-color: #a90123 !important
-    border-color: none !important
-    border: none !important
+    margin-left: 20px
 </style>

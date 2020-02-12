@@ -1,7 +1,7 @@
 <template lang="pug">
 .container
   .columns
-    .column.is-offset-2
+    .column.is-offset-3
       p.plan-edit__id Edit Plan № {{ plan.id}} 
       form(@submit.prevent="editPlan")
         p.plan-edit__title Check your answers, please
@@ -11,7 +11,8 @@
             td.plan-edit__answers {{ answer.question.title }} 
             td
                input.input.is-small(:placeholder="answer.value || 'There is nothing here yet'" v-model="answer.value")
-        button.button.btn-plan Submit
+        .plan-edit__submit-button 
+          button.button.is-warning Submit
 </template>
 
 <script>
@@ -77,6 +78,11 @@ export default {
       color: #36363645
     input
       color: black
+
+  &__submit-button
+    display: flex
+    justify-content: flex-end
+    width: 500px
 
 .btn:hover
   transform: scale(1.03)
