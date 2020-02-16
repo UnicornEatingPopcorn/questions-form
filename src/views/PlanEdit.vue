@@ -53,6 +53,7 @@ export default {
 
 <style lang="sass">
 .plan-edit
+  height: 81vh
 
   &__id
     color: #BAE5FE
@@ -83,6 +84,7 @@ export default {
     display: flex
     justify-content: flex-end
     width: 500px
+    margin-bottom: 20px
 
 .btn:hover
   transform: scale(1.03)

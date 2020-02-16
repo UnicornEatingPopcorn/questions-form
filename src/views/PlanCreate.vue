@@ -73,7 +73,7 @@ export default {
   display: flex
   justify-content: center
   align-items: center
-  height: calc(100vh - 120px)
+  height: 81vh
 
   &__title
     font-size: 18px
@@ -94,7 +94,8 @@ export default {
   &__question-plan
     background-color: #495057
     border-radius: 4px
-    padding: 30px 40px
+    padding: 20px 40px
+    margin-bottom: 10px
 
 .button:hover
   transform: scale(1.03)

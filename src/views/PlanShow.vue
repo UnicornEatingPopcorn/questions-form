@@ -48,7 +48,7 @@ export default {
 
 <style lang="sass">
 .plan-show
-  min-height: 83vh
+  min-height: 81vh
 
   &__title
     color: white
@@ -73,6 +73,7 @@ export default {
     margin-top: 20px !important
     display: flex
     justify-content: flex-end
+    margin-bottom: 20px
 
   &__delete-button
     margin-left: 20px

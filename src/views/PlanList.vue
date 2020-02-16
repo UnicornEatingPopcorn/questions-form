@@ -34,7 +34,7 @@ export default {
 <style lang="sass">
 .plan-list
   padding-top: 40px
-  min-height: 83vh
+  min-height: 81vh
 
   &__title
     color: white
