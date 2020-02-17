@@ -15,7 +15,6 @@
   justify-content: center
   align-items: center
   display: flex
-  /* margin-top: 20px */
 
   &__creator-name
     color: #000000e3
