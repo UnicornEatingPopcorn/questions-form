@@ -10,7 +10,10 @@
             td.plan-edit__answers {{ answer.question.id}}.
             td.plan-edit__answers {{ answer.question.title }} 
             td
-               input.input.is-small(:placeholder="answer.value || 'There is nothing here yet'" v-model="answer.value")
+               select.input.is-small(:placeholder="answer.value || 'There is nothing here yet'" @change="updateValue" v-model="answer.value")
+                 option(
+                   v-for="option in answer.question.select_options"
+                   :key="option.id") {{ option.name }}
         .plan-edit__submit-button 
           button.button.is-warning Submit
 </template>
@@ -46,6 +49,9 @@ export default {
         .catch(() => {
           console.log("There was a problem editing your plan");
         });
+    },
+    updateValue(event) {
+      return (this.answer.value = event);
     }
   }
 };

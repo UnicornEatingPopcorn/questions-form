@@ -1,7 +1,7 @@
 <template lang="pug">
 .create-plan-page
   .columns
-    .column.is-6.is-offset-3
+    .column.is-5.is-offset-1
       form#mainQuestions.create-plan-page__question-plan(@submit.prevent="createPlan")
         p.create-plan-page__title Let's start with few simple questions
         .create-plan-page__line
@@ -13,6 +13,11 @@
         .columns
           .column.create-plan-page__button
             button.button.is-black Submit
+    .column.is-4.is-offset-1
+      .create-plan-page__question-plan
+        p.create-plan-page__title Additional questions
+        .create-plan-page__line
+        p There is no additional questions yet. Please answer the main questions to figure out if we need more information for create your dream trip.
 </template>
 
 <script>
