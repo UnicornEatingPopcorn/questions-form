@@ -1,5 +1,7 @@
 # oct-user-questions
 [![img](https://i.imgur.com/LeIeZNp.png)](https://youtu.be/vfe8NoMW4l0)
+
+Only client-side questions form for further creating a personal trip. Click picture to see video demostration on Youtube
 ## Project setup
 ```
 npm install
